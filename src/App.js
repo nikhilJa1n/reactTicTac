@@ -12,10 +12,9 @@ class App extends Component {
   clickSquareHandler(index) {
     let newBoard = this.state.board;
     newBoard[index] = this.state.player;
-    let newPlayer = this.state.player === 'X' ? 'O' : 'X';
     this.setState({
       board: newBoard,
-      player: newPlayer,
+      player: this.state.player === 'X' ? 'O' : 'X',
     });
   }
 
