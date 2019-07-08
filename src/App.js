@@ -8,10 +8,19 @@ class App extends Component {
       board: Array(9).fill(null),
     };
   }
+  clickSquareHandler(event) {
+    console.log(event.target);
+  }
 
   render() {
-    const Box = this.state.board.map(box => (
-      <div className="square">{box}</div>
+    const Box = this.state.board.map((box, index) => (
+      <div
+        className="square"
+        key={index}
+        onClick={event => this.clickSquareHandler(event)}
+      >
+        {box}
+      </div>
     ));
     return (
       <div className="container">
