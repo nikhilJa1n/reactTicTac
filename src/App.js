@@ -6,16 +6,17 @@ class App extends Component {
     super();
     this.state = {
       board: Array(9).fill(null),
+      player: 'X',
     };
   }
   clickSquareHandler(index) {
     let newBoard = this.state.board;
-    newBoard[index]="X";
+    newBoard[index] = this.state.player;
+    let newPlayer = this.state.player === 'X' ? 'O' : 'X';
     this.setState({
-      board:newBoard
-    })
-    console.log(this.state.board);
-    
+      board: newBoard,
+      player: newPlayer,
+    });
   }
 
   render() {
