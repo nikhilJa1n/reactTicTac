@@ -9,7 +9,13 @@ class App extends Component {
     };
   }
   clickSquareHandler(index) {
-    console.log(index);
+    let newBoard = this.state.board;
+    newBoard[index]="X";
+    this.setState({
+      board:newBoard
+    })
+    console.log(this.state.board);
+    
   }
 
   render() {
