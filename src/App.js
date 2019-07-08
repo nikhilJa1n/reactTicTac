@@ -5,7 +5,7 @@ class App extends Component {
   constructor(props) {
     super();
     this.state = {
-      board: Array(9).fill('X'),
+      board: Array(9).fill(null),
     };
   }
 
