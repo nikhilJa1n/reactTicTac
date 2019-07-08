@@ -8,8 +8,8 @@ class App extends Component {
       board: Array(9).fill(null),
     };
   }
-  clickSquareHandler(event) {
-    console.log(event.target);
+  clickSquareHandler(index) {
+    console.log(index);
   }
 
   render() {
@@ -17,7 +17,7 @@ class App extends Component {
       <div
         className="square"
         key={index}
-        onClick={event => this.clickSquareHandler(event)}
+        onClick={() => this.clickSquareHandler(index)}
       >
         {box}
       </div>
