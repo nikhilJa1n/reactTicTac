@@ -13,11 +13,11 @@ class App extends Component {
     let newBoard = this.state.board;
     if (this.state.board[index] === null) {
       newBoard[index] = this.state.player;
+      this.setState({
+        board: newBoard,
+        player: this.state.player === 'X' ? 'O' : 'X',
+      });
     }
-    this.setState({
-      board: newBoard,
-      player: this.state.player === 'X' ? 'O' : 'X',
-    });
   }
 
   render() {
