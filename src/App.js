@@ -31,7 +31,7 @@ class App extends Component {
       const [a, b, c] = winnerIndexes[index];
       const board = this.state.board;
       if (board[a] && board[a] === board[b] && board[a] === board[c]) {
-        alert('player ' + this.state.player + ' won');
+        // alert('player ' + this.state.player + ' won');
         this.setState({ winner: this.state.player });
       }
     }
@@ -76,6 +76,7 @@ class App extends Component {
           setPlayer={event => {
             this.setPlayer(event);
           }}
+          winner={this.state.winner}
         />
         <div className="board">{this.renderSquares()}</div>
       </div>
