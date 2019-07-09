@@ -66,7 +66,7 @@ class App extends Component {
     ));
 
     let Status = this.state.player ? (
-      ''
+      <h2>Next Player :{this.state.player}</h2>
     ) : (
       <Player player={event => this.setPlayer(event)} />
     );
