@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import './App.css';
+import Player from './components/choosePlayer';
 
 class App extends Component {
   constructor(props) {
     super();
     this.state = {
       board: Array(9).fill(null),
-      player: 'X',
+      player: null,
       winner: null,
     };
   }
@@ -30,7 +31,7 @@ class App extends Component {
         this.state.board[a] === this.state.board[c]
       ) {
         alert('player ' + this.state.player + ' won');
-        this.setState({winner:this.state.player})
+        this.setState({ winner: this.state.player });
       }
     }
   }
@@ -45,7 +46,10 @@ class App extends Component {
       });
       this.checkWinnerHandler();
     }
-    
+  }
+
+  setPlayer(player) {
+    this.setState({ player });
   }
 
   render() {
@@ -61,6 +65,7 @@ class App extends Component {
     return (
       <div className="container">
         <h1>Tic Tac Toe</h1>
+        <Player player={event => this.setPlayer(event)} />
         <div className="board">{Box}</div>
       </div>
     );
