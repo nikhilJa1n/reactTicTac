@@ -4,7 +4,7 @@ import Status from './components/status';
 
 class App extends Component {
   constructor(props) {
-    super();
+    super(props);
     this.state = {
       board: Array(9).fill(null),
       player: null,
@@ -67,12 +67,12 @@ class App extends Component {
     ));
   }
 
-  reset(){
+  reset() {
     this.setState({
-      player:null,
-      winner:null,
-      board:Array(9).fill(null),
-    })
+      player: null,
+      winner: null,
+      board: Array(9).fill(null),
+    });
   }
 
   render() {
@@ -87,7 +87,9 @@ class App extends Component {
           winner={this.state.winner}
         />
         <div className="board">{this.renderSquares()}</div>
-        <button onClick={()=> this.reset()}>Reset</button>
+        <button disabled={!this.state.winner} onClick={() => this.reset()}>
+          Reset
+        </button>
       </div>
     );
   }
